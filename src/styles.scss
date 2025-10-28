@@ -1,1 +1,43 @@
-/* You can add global styles to this file, and also import other style files */
+:root{
+    --primary-color-green : #70E61C;
+    --primary-color-purple : #9747FF;
+    --primary-color-white : #FFFFFF;
+    --background-color-blue : #141D2F;
+    --warn-color : #E61C40;
+}
+
+
+
+
+@font-face {
+    font-family: "poppins";
+    src: url(./assets/fonts/Poppins/Poppins-Regular.ttf);
+}
+
+*{
+    margin: 0;
+    font-family: 'poppins';
+    color: #FFFFFF;
+}
+
+html{
+    scroll-behavior: smooth;
+    width: 100%;
+    background-color: var(--background-color-blue);
+    display: flex;
+    justify-content: center
+}
+
+body {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: var(--background-color-blue);
+}
+
+.main-section{
+    max-width: 1920px;
+    width: 100%;
+}
+
+

@@ -1,0 +1,35 @@
+.skills-section{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 180px;
+    gap: 105px;
+    >.skills-icon-wrapper{
+    width: 664px;
+    height: 404px;
+    display: flex;
+    gap: 88px;
+    align-items: center;
+    flex-wrap: wrap;
+    >.skills-icon-wrap{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 88px;
+        height: 101px;
+        >.skill-name{
+            text-align: center;
+        }
+    }
+    }
+    >.skill-text{
+        width: 571px;
+        height: 400px;
+        >.skill-title>h2{
+            font-size: 90px;
+        }
+    }
+}
+
