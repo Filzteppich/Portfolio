@@ -28,8 +28,17 @@
         font-size: 90px;
         font-weight: 700;
     }
-}  
+}
 
+@media screen and (max-height: 1100px) {
+    .main-text>div>h2{
+        font-size: 40px;
+    }
+
+    .section-text{
+        max-width: 540px;
+    }
+    }
 
 .sub-text-wrap{
     display: flex;
@@ -61,6 +70,7 @@
     >hr{
         width: 100%;
         border: 2px solid var(--primary-color-green);
+        border-radius: 0 4px 4px 0;;
     }
 }
 

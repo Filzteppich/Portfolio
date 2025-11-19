@@ -1,18 +1,45 @@
 <div class="skills-section">
-    <div class="skills-icon-wrapper">
-        <div *ngFor="let skill of skills; let i = index" class="skills-icon-wrap">
-            <div class="skill-icon">
-                <img src="{{ skill.image }}" alt="">
-            </div>
-            <div class="skill-name">
-                <span>{{ skill.name }}</span>
-            </div>
-        </div>
+  <div class="skills-icon-wrapper">
+    <div *ngFor="let skill of skills; let i = index" class="skills-icon-wrap">
+      <div class="skill-icon">
+        <img src="{{ skill.image }}" alt="" />
+      </div>
+      <div class="skill-name">
+        <span>{{ skill.name }}</span>
+      </div>
     </div>
-    <div class="skill-text">
-        <div class="skill-title">
-            <h2>My Skills</h2>
-        </div>
+  </div>
+  <div class="skill-text">
+    <div class="skill-title-wrapper">
+      <div class="skill-title-wrap">
+        <h2>My Skills</h2>
+      </div>
+      <div class="horizontal-stroke"><hr /></div>
     </div>
-
+    <div class="skill-description-wrapper">
+      <div class="skill-description-wrap">
+        <span
+        >Als Frontend Developer arbeite ich mit modernen Webtechnologien, um
+        benutzerfreundliche und performante Anwendungen zu gestalten. Meine
+        Schwerpunkte liegen dabei auf HTML, CSS/SCSS, JavaScript, TypeScript und
+        Angular, mit denen ich sowohl kleinere Features als auch komplexere
+        Anwendungen erfolgreich umgesetzt habe. In meinen Projekten habe ich
+        Firebase eingesetzt, um Funktionen wie Authentifizierung oder
+        Datenverwaltung bereitzustellen und vollständige Webanwendungen zu
+        realisieren. Außerdem nutze ich Git täglich, sei es zur sauberen
+        Versionsverwaltung oder zur strukturierten Zusammenarbeit im Team –
+        besonders beim Branch-Management habe ich wertvolle Erfahrungen
+        gesammelt. Ich liebe es, neue Technologien zu entdecken, Best Practices
+        anzuwenden und mich kontinuierlich weiterzuentwickeln, um moderne und
+        hochwertige Weblösungen zu schaffen.</span>
+      </div>
+      <div class="right-spacer"></div>
+    </div>
+    <div class="skill-request-wrapper">
+      <div class="skill-request-wrap">
+        <span>Sie benötigen einen</span><span class="purple-text"> anderen Skill?</span>
+      </div>
+      <div class="right-spacer"></div>
+    </div>
+</div>
 </div>
