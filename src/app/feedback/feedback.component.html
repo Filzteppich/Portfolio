@@ -1,0 +1,33 @@
+<div class="feedback-section">
+  <div class="feedback-title">
+    <h2>What my colleagues say about me</h2>
+  </div>
+
+  <div class="feedback-wrapper">
+    <div class="feedback-wrap" >
+      <div class="floating-image">
+        <img src="./../../assets/icons/floating-icon.svg" alt="">
+      </div>
+        <div class="feedback-comment"> {{ feedbacks[feedbackIndex].comment}}</div>
+        <div class="feedback-info">
+          <div class="horizontal-stroke"><hr></div>
+          <div class="comment-name"> {{ feedbacks[feedbackIndex].name }} - {{ feedbacks[feedbackIndex].relation }}</div>
+        </div>
+    </div>
+    <div class="selection-wrapper">
+        <div class="arrow" (click)="previousIndex()">
+          <img src="./../../assets/icons/arrow-icons/arrow_back.svg" alt="">
+        </div>
+        <div 
+        *ngFor="let feedback of feedbacks; let i = index" 
+        (click)="getSpecificIndex(i)" 
+        [ngClass]="{'selected' : i === feedbackIndex, 'selection' : i !== feedbackIndex}" >
+          	&#9679;
+        </div>
+
+        <div class="arrow" (click)="nextIndex()">
+          <img src="./../../assets/icons/arrow-icons/arrow_forward.svg" alt="">
+        </div>
+    </div>
+  </div>
+</div>

@@ -7,7 +7,7 @@
 
 .skills-section{
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     display: flex;
     justify-content: flex-end;
     gap: 105px;
@@ -39,49 +39,73 @@
         height: 400px;
         text-align: end;
     }
+}
     
     
-    
-    .skill-title-wrapper{
-        display: flex;
-        align-items: center;
-        gap: 32px;
-        justify-content: end;
-        >.skill-title-wrap>h2{
-            font-size: 90px;
-        }
+.skill-title-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    justify-content: end;
+    >.skill-title-wrap>h2{
+        font-size: 90px;
     }
+}
 
-    .horizontal-stroke{
+.horizontal-stroke{
+    flex: 1;
+    max-width: 68px;
+    >hr{
+        border: 2px solid var(--primary-color-purple);
+        border-radius: 4px;
+    }
+}
+
+.skill-description-wrapper{
+    @include right-space();
+    >.skill-description-wrap{
         flex: 1;
-        max-width: 68px;
-        >hr{
-            border: 2px solid var(--primary-color-green);
-            border-radius: 4px;
-        }
     }
-
-    .skill-description-wrapper{
-        @include right-space();
-        >.skill-description-wrap{
-            flex: 1;
-        }
-    }
+}
     
-    .right-spacer{
-        width: 68px;
-        flex-shrink: 0;
-    }
+.right-spacer{
+    width: 68px;
+    flex-shrink: 0;
+}
 
-        .skill-request-wrapper{
-        @include right-space();
-        >.skill-request-wrap{
-            flex: 1;
-            font-size: 32px;
-        }
-        >.skill-request-wrap>.purple-text{
-            color: var(--primary-color-purple);
-        }
+.skill-request-wrapper{
+@include right-space();
+padding-top: 24px;
+    >.skill-request-wrap{
+        flex: 1;
+        
     }
+}
 
+.purple-text{
+    color: var(--primary-color-purple);
+}
+
+.contact-text{
+    font-size: 16px;
+    padding-top: 16px;
+}
+
+.skill-request-text{
+    font-size: 32px;
+}
+
+.contact-btn-wrapper{
+    @include right-space();  
+    justify-content: flex-end;  
+    padding-top: 40px;
+}
+
+
+.contact-btn{
+    color: white;
+    background-color: var(--primary-color-green);
+    border-radius: 10px;
+    font-size: 23px;
+    padding: 15px 30px;
 }

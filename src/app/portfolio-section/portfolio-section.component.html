@@ -1,12 +1,30 @@
 <div class="portfolio-section">
-    <div class="section-title">
+    <div class="portfolio-title">
         <div class="left-spacer"></div>
         <hr>
         <h2>Portfolio</h2>
         <hr class="horizontal-stroke">
     </div>
-    <div class="portfolio-wrapper">
-
+    <div class="portfolio-description">
+        <span>Hier finden sie eine Auswahl meiner ausgewählten Projekte - Interagieren sie mit den Projekten um meine Fähigkeiten in Aktion zu sehen.</span>
+    </div>
+    <div class="portfolio-wrapper"  >
+        <div class="portfolio-wrap" *ngFor="let project of portfolioProjects, let i = index">
+            <div class="project-img">
+                <img  src="assets/imgs/{{project.image}}" alt="">
+            </div>
+            <div class="project-info">
+                <div class="project-text">
+                    <span class="project-name">{{project.name}}</span> <br>
+                    <span class="project-skills">{{project.skills}}</span> <br>
+                    <span class="project-description">{{project.description}}</span>
+                </div>
+                <div class="project-btn">
+                    <div><button class="live-test-btn">Live Test</button></div>
+                    <div><button class="github-btn">GitHub</button></div>
+                </div>
+            </div>
+        </div>
     </div>
 
 </div>
