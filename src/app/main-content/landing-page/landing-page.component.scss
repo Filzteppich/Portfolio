@@ -10,6 +10,7 @@
     width: 100%;
     display: flex;
     flex-direction: row;
+    align-items: center;
     position: relative;;
 }
 
@@ -18,7 +19,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding-top: 188px;
+    padding-bottom: 110px;
     align-items: center;
     gap: 80px;
 }
@@ -76,19 +77,24 @@
     display: flex;
     align-items: center;
     position: absolute;
-    bottom: 0;
+    bottom: 30px;
     left: 0;
     gap: 42px;
     >div>hr{
         width: 100px;
         border-color: var(--primary-color-green);
     }
+    >.social-icons{
+        &:hover{
+            cursor: pointer;
+        }
+    }
 }
 
 .scroll-wrapper{
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: 100px;
     >button{
         display: flex;
         align-items: center;

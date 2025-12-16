@@ -8,5 +8,8 @@
     >.footer-social{
         display: flex;
         gap: 42px;
+        :hover{
+            cursor: pointer;
+        }
     }
 }
