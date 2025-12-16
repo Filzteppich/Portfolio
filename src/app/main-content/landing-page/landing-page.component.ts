@@ -10,5 +10,17 @@ import { CommonModule } from '@angular/common';
   styleUrl: './landing-page.component.scss'
 })
 export class LandingPageComponent {
-
+    socialIcons = [{
+    name : 'gitHub',
+    icon : 'assets/icons/social-icons/Github_button.svg',
+    link : ''
+  },{
+    name : 'mail',
+    icon : 'assets/icons/social-icons/Email_button.svg',
+    link : ''
+  },{
+    name : 'linkedIn',
+    icon : 'assets/icons/social-icons/Linkedin_button.svg',
+    link : ''
+  },]
 }

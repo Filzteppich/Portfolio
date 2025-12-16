@@ -1,0 +1,18 @@
+<div class="footer-section">
+    <div class="footer-logo">
+        <div class="logo">
+            Ngoc-Khang Duong
+        </div>
+        <div class="legal-notice">
+            legal notice
+        </div>
+    </div>
+    <div class="footer-rights">
+        &#169; Ngoc-Khang Duong 2025
+    </div>
+    <div class="footer-social">
+        <div *ngFor="let icon of socialIcons; let i = index" class="social-icons">
+            <img src="{{ icon.icon }}" alt="">
+        </div>
+    </div>
+</div>

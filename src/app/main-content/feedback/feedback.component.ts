@@ -23,7 +23,7 @@ export class FeedbackComponent {
       relation: 'Teampartner'
     },{
       name: 'Michele Korfmacher',
-      comment: '',
+      comment: 'Khang zeigte während unserer gemeinsamen Projektarbeit eine hohe Lernbereitschaft und großes Interesse an neuen Technologien. Mit seinem schnellen Verständnis für technische Zusammenhänge und seiner Fähigkeit, pragmatische Lösungen zu finden, trug er maßgeblich zum Fortschritt unseres Projekts bei. Besonders positiv blieb mir seine ausgeprägte Teamfähigkeit in Erinnerung.',
       relation: 'Teampartner'
     }
   ]
