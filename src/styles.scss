@@ -3,6 +3,7 @@
     --primary-color-purple : #9747FF;
     --primary-color-white : #FFFFFF;
     --background-color-blue : #141D2F;
+    --disabled-button-grey : #B6B6B6;
     --warn-color : #E61C40;
 }
 
@@ -28,20 +29,17 @@ html{
     scroll-behavior: smooth;
     width: 100%;
     background-color: var(--background-color-blue);
-    display: flex;
-    justify-content: center
 }
 
 body {
     width: 100%;
-    display: flex;
-    justify-content: center;
     background-color: var(--background-color-blue);
 }
 
 .main-section{
     max-width: 1920px;
     width: 100%;
+    margin: 0 auto;
 }
 
 

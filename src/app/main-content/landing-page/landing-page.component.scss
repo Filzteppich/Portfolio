@@ -13,9 +13,6 @@
     position: relative;;
 }
 
-.atf-left {
-    flex: 1;
-}
 
 .atf-right{
     flex: 1;
@@ -26,13 +23,22 @@
     gap: 80px;
 }
 
-.atf-btn{
-    background-color: var(--primary-color-green);
+.atf-buttons{
+    display: flex;
+    gap: 100px;
+}
+
+.atf-buttons{
+    padding-top: 60px;
+}
+
+.contact-btn, .portfolio-button{
+    background-color: unset;
     color: var(--primary-color-white);
-    width: 165px;
-    height: 58px;
+    border: solid 2px #ffffff;
     border-radius: 10px;
     font-size: 23px;
+    padding: 15px 30px;
 }
 
 .atf-text{
@@ -51,12 +57,17 @@
         }
     }
     >.atf-name{
+        display: flex;
+        flex-direction: column;
         >span:first-child{
-            font-size: 90px;
-        }
-        >span:last-child{
             font-size: 58px;
             color: var(--primary-color-purple);
+            display: inline-block;
+            text-align: center;
+        }
+        
+        >span:last-child{
+            font-size: 90px;
         }
     }
 }
