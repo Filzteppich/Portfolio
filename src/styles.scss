@@ -1,8 +1,8 @@
 :root{
-    --primary-color-green : #70E61C;
-    --primary-color-purple : #9747FF;
+    --primary-color-green : #70E61C; // #b3108a
+    --primary-color-purple : #9747FF; // #22a986
     --primary-color-white : #FFFFFF;
-    --background-color-blue : #141D2F;
+    --background-color-blue : #141D2F; // #10203d
     --disabled-button-grey : #B6B6B6;
     --warn-color : #E61C40;
 }
@@ -42,3 +42,9 @@ body {
     margin: 0 auto;
 }
 
+a{
+    text-decoration: none;
+    &:hover{
+        cursor: pointer;
+    }
+}

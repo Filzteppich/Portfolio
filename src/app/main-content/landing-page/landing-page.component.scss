@@ -95,7 +95,7 @@
     position: absolute;
     bottom: 0;
     right: 100px;
-    >button{
+    >a{
         display: flex;
         align-items: center;
         background-color: unset;
@@ -103,5 +103,6 @@
         border: none;
         transform: rotate(90deg);
         transform-origin: right top;
+        text-decoration: none;
     }
 }
