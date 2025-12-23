@@ -21,7 +21,8 @@
         <div 
         *ngFor="let feedback of feedbacks; let i = index" 
         (click)="getSpecificIndex(i)" 
-        [ngClass]="{'selected' : i === feedbackIndex, 'selection' : i !== feedbackIndex}" >
+        [ngClass]="{'selected' : i === feedbackIndex, 'selection' : i !== feedbackIndex}"
+         >
           	&#9679;
         </div>
 
