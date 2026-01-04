@@ -1,4 +1,4 @@
-<div class="portfolio-section" id="portfolio-section">
+<div class="portfolio-section" id="portfolio-section" *ngIf="language === 'de'">
     <div class="portfolio-title">
         <div class="left-spacer"></div>
         <hr>
@@ -17,7 +17,7 @@
                 <div class="project-text">
                     <span class="project-name">{{project.name}}</span> <br>
                     <span class="project-skills">{{project.skills}}</span> <br>
-                    <span class="project-description">{{project.description}}</span>
+                    <span class="project-description">{{project.descriptionDe}}</span>
                 </div>
                 <div class="project-btn">
                     <div><a href="{{ project.liveTest }}" target="_blank" rel="noopener noreferrer" class="live-test-btn">Live Test</a></div>
@@ -26,5 +26,35 @@
             </div>
         </div>
     </div>
-
 </div>
+
+<div class="portfolio-section" id="portfolio-section" *ngIf="language === 'en'">
+    <div class="portfolio-title">
+        <div class="left-spacer"></div>
+        <hr>
+        <h2>Portfolio</h2>
+        <hr class="horizontal-stroke">
+    </div>
+    <div class="portfolio-description">
+        <span>Here you’ll find a selection of my featured projects — interact with them to see my skills in action.</span>
+    </div>
+    <div class="portfolio-wrapper"  >
+        <div class="portfolio-wrap" *ngFor="let project of portfolioProjects, let i = index">
+            <div class="project-img">
+                <img  src="assets/imgs/{{project.image}}" alt="">
+            </div>
+            <div class="project-info">
+                <div class="project-text">
+                    <span class="project-name">{{project.name}}</span> <br>
+                    <span class="project-skills">{{project.skills}}</span> <br>
+                    <span class="project-description">{{project.descriptionEn}}</span>
+                </div>
+                <div class="project-btn">
+                    <div><a href="{{ project.liveTest }}" target="_blank" rel="noopener noreferrer" class="live-test-btn">Live Test</a></div>
+                    <div><a href="{{ project.gitHub }}" target="_blank" rel="noopener noreferrer" class="github-btn">GitHub</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

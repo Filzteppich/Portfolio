@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { LandingPageComponent } from "./landing-page/landing-page.component";
 import { AboutMeComponent } from "./about-me/about-me.component";
 import { SkillsComponent } from "./skills/skills.component";
@@ -14,5 +14,6 @@ import { ContactSectionComponent } from "./contact-section/contact-section.compo
   styleUrl: './main-content.component.scss'
 })
 export class MainContentComponent {
+  @Input() language: 'de' | 'en' = 'de';
 
 }

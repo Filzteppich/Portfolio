@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { environment } from '../../../environments/environment';
@@ -11,6 +11,7 @@ import { environment } from '../../../environments/environment';
   styleUrl: './contact-section.component.scss'
 })
 export class ContactSectionComponent {
+  @Input() language: 'de' | 'en' = 'de'
   form: FormGroup;
   sending = false;
   sent = false;

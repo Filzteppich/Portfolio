@@ -1,4 +1,19 @@
-<section id="navbar">
+<section *ngIf="germanLanguage" id="navbar">
+    <div class="navbar-logo">
+        Ngoc-Khang Duong
+    </div>
+    <div class="navbar-content">
+        <a class="hover-underline-animation" href="#aboutMeSection">Über Mich</a>
+        <a class="hover-underline-animation" href="#skills-section">Fähigkeiten</a>
+        <a class="hover-underline-animation" href="#portfolio-section">Portfolio</a>
+        <div>
+            <button (click)="setGermanLanguage()" [ngClass]="{'language-active': germanLanguage}">DE</button>
+            <button (click)="setEnglishLanguage()" [ngClass]="{'language-active': englishLanguage}">EN</button>
+        </div>
+    </div>
+</section>
+
+<section *ngIf="englishLanguage" id="navbar">
     <div class="navbar-logo">
         Ngoc-Khang Duong
     </div>
@@ -6,9 +21,10 @@
         <a class="hover-underline-animation" href="#aboutMeSection">About me</a>
         <a class="hover-underline-animation" href="#skills-section">Skills</a>
         <a class="hover-underline-animation" href="#portfolio-section">Portfolio</a>
-        <a class="hover-underline-animation" href="#">language</a>
+        <div>
+            <button (click)="setGermanLanguage()" [ngClass]="{'language-active': germanLanguage}">DE</button>
+            <button (click)="setEnglishLanguage()" [ngClass]="{'language-active': englishLanguage}">EN</button>
+        </div>
     </div>
-
-
 </section>
 

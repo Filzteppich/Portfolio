@@ -1,4 +1,4 @@
-<div class="contact-section" id="contact-section">
+<div class="contact-section" *ngIf="language === 'en'" id="contact-section">
     <div class="contact-title">
         <hr>
         <h2>Contact</h2>
@@ -20,7 +20,7 @@
         </div>
         <div class="right-section" [formGroup]="form">
             <div class="scroll-top-btn">
-                <a href="#navbar"><img src="./../../../assets/icons/arrow-icons/scroll-top.svg" alt=""></a>  
+                <a href="#atf-section"><img src="./../../../assets/icons/arrow-icons/scroll-top.svg" alt=""></a>  
             </div>
             <div class="input-fields">
                 <input type="text" formControlName="name" placeholder="Your name">
@@ -36,6 +36,54 @@
             </div>
             <div class="submit-button">
                 <button type="button" (click)="onSubmit()" [disabled]="sending || form.invalid">{{ sending ? 'Sending...' : 'Send a Message' }}</button>
+            </div>
+            <div class="status" *ngIf="errorMsg || sent">
+                <span class="error" *ngIf="errorMsg">{{ errorMsg }}</span>
+                <span class="success" *ngIf="!errorMsg && sent">Danke! Ihre Nachricht wurde vorbereitet/gesendet.</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="contact-section" *ngIf="language === 'de'" id="contact-section">
+    <div class="contact-title">
+        <hr>
+        <h2>Kontakt</h2>
+        <div class="right-spacer"></div>
+    </div>
+    <div class="split-section">
+        <div class="left-section">
+            <div class="left-title">
+                Haben sie ein Problem?
+            </div>
+            <div class="left-text">
+                <div>
+                    Zögern sie nicht mich zu Kontaktieren, ich würde ihnen gerne bei ihrem Problem helfen.
+                </div>
+                <div>
+                    Brauchen sie einen Frontend-Entwickler? <b>Kontaktieren sie mich!</b>
+                </div>
+            </div>
+        </div>
+        <div class="right-section" [formGroup]="form">
+            <div class="scroll-top-btn">
+                <a href="#atf-section"><img src="./../../../assets/icons/arrow-icons/scroll-top.svg" alt=""></a>  
+            </div>
+            <div class="input-fields">
+                <input type="text" formControlName="name" placeholder="Ihr Name">
+                <input class="mail-input" type="email" formControlName="email" placeholder="Ihre Email">
+                <textarea formControlName="message" placeholder="Ihre Nachricht"></textarea>
+            </div>
+            <div class="checkbox-area">
+                <label class="checkbox">
+                    <input class="policy-checkbox" type="checkbox" formControlName="policy" />
+                    <span class="checkmark" aria-hidden="true"></span>
+                    <span class="checkbox-label">Ich habe die <a href="">Datenschutzbestimmungen</a> gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu</span>
+                </label>
+            </div>
+            <div class="submit-button">
+                <button type="button" (click)="onSubmit()" [disabled]="sending || form.invalid">{{ sending ? 'sendet...' : 'Schicken sie eine Nachricht' }}</button>
             </div>
             <div class="status" *ngIf="errorMsg || sent">
                 <span class="error" *ngIf="errorMsg">{{ errorMsg }}</span>

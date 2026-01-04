@@ -82,7 +82,11 @@
                 cursor: pointer;
                 position: relative;
                 user-select: none;
-                a { color: var(--primary-color-purple); }
+                a { color: var(--primary-color-purple); 
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
                 min-height: 24px;
                 input{
                     position: absolute;

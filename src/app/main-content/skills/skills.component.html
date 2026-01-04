@@ -1,4 +1,4 @@
-<div class="skills-section" id="skills-section">
+<div class="skills-section" id="skills-section" *ngIf="language === 'de'">
   <div class="skills-icon-wrapper">
     <div *ngFor="let skill of skills; let i = index" class="skills-icon-wrap">
       <div class="skill-icon">
@@ -50,3 +50,57 @@
     </div>
 </div>
 </div>
+
+
+<div class="skills-section" id="skills-section" *ngIf="language === 'en'">
+  <div class="skills-icon-wrapper">
+    <div *ngFor="let skill of skills; let i = index" class="skills-icon-wrap">
+      <div class="skill-icon">
+        <img src="{{ skill.image }}" alt="" />
+      </div>
+      <div class="skill-name">
+        <span>{{ skill.name }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="skill-text">
+    <div class="skill-title-wrapper">
+      <div class="skill-title-wrap">
+        <h2>My Skills</h2>
+      </div>
+      <div class="horizontal-stroke"><hr /></div>
+    </div>
+    <div class="skill-description-wrapper">
+      <div class="skill-description-wrap">
+          <span>
+          As a frontend developer, I work with modern web technologies to build
+          user‑friendly and high‑performance applications. My focus includes HTML,
+          CSS/SCSS, JavaScript, TypeScript, and Angular, with which I’ve delivered
+          both smaller features and more complex applications. In my projects, I’ve
+          used Firebase to provide features like authentication and data management
+          and to build complete web applications. I use Git daily—for clean version
+          control and structured team collaboration—and I’ve gained valuable
+          experience, especially with branch management. I love exploring new
+          technologies, applying best practices, and continuously improving to
+          create modern, high‑quality web solutions.
+          </span>
+      </div>
+      <div class="right-spacer"></div>
+    </div>
+    <div class="skill-request-wrapper">
+      <div class="skill-request-wrap">
+          <div class="skill-request-text"><span>Do you need a</span><span class="purple-text"> different skill?</span></div>
+          <div class="contact-text"><span>Feel free to contact me — I’m happy to expand my skills.</span></div>
+      </div>
+      <div class="right-spacer"></div>
+    </div>
+    <div class="contact-btn-wrapper">
+      <div class="contact-btn-wrap">
+          <a href="#contact-section" class="contact-btn">Let’s talk!</a>
+      </div>
+      <div class="right-spacer"></div>
+    </div>
+</div>
+</div>
+
+

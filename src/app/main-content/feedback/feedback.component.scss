@@ -15,39 +15,67 @@
     flex-direction: column;
     align-items: center;
     gap: 32px;
+    position: relative;
 }
 
 .feedback-wrap{
     width: 800px;
     height: 272px;
     border: solid 4px var(--primary-color-green);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: block;
     padding: 48px 96px;
     border-radius: 32px;
     position: relative;
-    >.feedback-comment{
-        font-size: 20px;
-        font-weight: 400;
-    }
-    >.feedback-info{
-        display: flex;
-        text-align: end;
-        font-size: 18px;
-        font-weight: 400;
-        >.horizontal-stroke{
-        flex: 1;
-        display: flex;
-        align-items: center;
-        >hr{
-            width: 96%;
-            border: solid 1px var(--primary-color-purple);
-            border-radius: 32px;
-        }
-        }
-    }
 }
+
+.slide-viewport{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.slide-viewport > .feedback-comment{
+    font-size: 20px;
+    font-weight: 400;
+    transition: transform 0.3s ease-in-out;
+    will-change: transform;
+}
+
+.slide-viewport > .feedback-info{
+    display: flex;
+    text-align: end;
+    font-size: 18px;
+    font-weight: 400;
+    transition: transform 0.3s ease-in-out;
+    will-change: transform;
+}
+
+.slide-viewport > .feedback-info > .horizontal-stroke{
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.slide-viewport > .feedback-info > .horizontal-stroke > hr{
+    width: 96%;
+    border: solid 1px var(--primary-color-purple);
+    border-radius: 32px;
+}
+
+.left-animation{
+    transform: translateX(-1000px);
+}
+.right-animation{
+    transform: translateX(1000px);
+}
+
+.no-transition{
+    transition: none !important;
+}
+
+
 
 .selection-wrapper{
     width: 100%;
@@ -62,6 +90,7 @@
             }
         }
     }
+
 
     .selection{
         color: var(--primary-color-purple);
@@ -82,7 +111,9 @@
     }   
 
     .floating-image{
-        position: absolute;
-        top: -24px;
-        left: -70px;
+    position: absolute;
+    top: -40px;
+    left: 25px;
+    z-index: 15;
     }
+    

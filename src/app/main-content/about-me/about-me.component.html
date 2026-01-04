@@ -1,8 +1,57 @@
-<div class="about-me-section" id="aboutMeSection" >
+<div class="about-me-section" *ngIf="language === 'en'" id="aboutMeSection" >
     <div class="section-text">
         <div class="main-text">
             <div>
                 <h2>About me</h2>
+            </div>
+            <div>
+                <span>Hi, I’m Khang. <br>
+                What excites me about frontend development is the blend of logic, creativity, and problem‑solving. Coding feels limitless, and that’s what motivates me every day: you never stop learning — which makes this journey so rewarding.
+                I want to grow, improve, and see what I’m capable of.</span>
+            </div>
+        </div>
+        <div class="sub-text-wrapper">
+            <div class="sub-text-wrap">
+                <div class="sub-icon">
+                    <img src="/assets/icons/Capa_1.svg" alt="">
+                </div>
+                <div class="sub-text">
+                        <span>I live in Göttingen, Germany, and I prefer being part of a team where personal exchange is possible and I can learn from others. Remote work is also fine for me, but in‑person collaboration has special value.</span>
+                </div>
+            </div>
+            <div class="sub-text-wrap">
+                <div class="sub-icon">
+                    <img src="/assets/icons/Vector.svg" alt="">
+                </div>
+                <div class="sub-text">
+                    <span>Technology is constantly evolving — and I love growing with it. HTML, CSS, and JavaScript are my current focus. JavaScript especially fascinates me: complex, challenging, and full of possibilities. That mix keeps me curious and motivates me to improve continuously.</span>
+                </div>
+            </div>
+            <div class="sub-text-wrap">
+                <div class="sub-icon">
+                        <img src="/assets/icons/Vector(1).svg" alt="">
+                    </div>
+                    <div class="sub-text">
+                        <span>I work analytically, creatively, and with structure. Clean, efficient, and readable code matters to me — not only to make things work, but so teams can build upon it together. Every project is a chance to find an elegant solution and grow.</span>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="character-section">
+        <div class="character-img">
+            <img src="./../../../assets/imgs/profile-picture.png" alt="">
+        </div>
+        <div class="horizontal-stroke">
+            <hr>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="language === 'de'" class="about-me-section" id="aboutMeSection" >
+    <div class="section-text">
+        <div class="main-text">
+            <div>
+                <h2>Über Mich</h2>
             </div>
             <div>
                 <span>Hallo, ich bin Khang. <br> 

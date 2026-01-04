@@ -25,5 +25,30 @@ section{
             color: var(--primary-color-white);
             font-size: 26px;
         }
+        >div{
+            display: flex;
+            gap: 14px;
+            >button{
+            background-color: unset;
+            padding: 5px 8px;
+            border: solid 1px var(--primary-color-green);
+            border-radius: 10px;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &:hover{
+                background-color: var(--primary-color-purple);
+                border: solid 1px var(--primary-color-purple);
+            }
+        }}
+    }
+}
+
+.language-active{
+    background-color: var(--primary-color-green) !important;
+    font-weight: 700;
+        &:hover{
+        border: solid 1px var(--primary-color-green) !important;
     }
 }

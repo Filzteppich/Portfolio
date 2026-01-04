@@ -1,9 +1,13 @@
+@import url(./../../../animations.scss);
+
 :host {
     display: block;
     width: 100%;
 }
 
-
+#atf-section{
+    scroll-margin-top: 110px;
+}
 
 .atf-section{
     height: calc(100vh - 110px);

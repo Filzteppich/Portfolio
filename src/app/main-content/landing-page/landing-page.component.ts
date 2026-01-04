@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NavbarComponent } from "./navbar/navbar.component";
 import { CommonModule } from '@angular/common';
 
@@ -10,6 +10,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './landing-page.component.scss'
 })
 export class LandingPageComponent {
-
+  @Input() language: 'de' | 'en' = 'de';
   
 }
