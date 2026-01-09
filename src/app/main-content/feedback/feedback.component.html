@@ -9,10 +9,10 @@
         <img src="./../../assets/icons/floating-icon.svg" alt="">
       </div>
       <div class="slide-viewport">
-        <div class="feedback-comment" [ngClass]="{'left-animation': animateLeft, 'right-animation': animateRight, 'no-transition': noTransition}"> {{ feedbacks[feedbackIndex].commentDe}}</div>
-        <div class="feedback-info" [ngClass]="{'left-animation': animateLeft, 'right-animation': animateRight, 'no-transition': noTransition}">
+        <div class="feedback-comment" [ngClass]="{'transitioning': transitioning}"> {{ feedbacks[feedbackIndex].commentDe}}</div>
+        <div class="feedback-info">
             <div class="horizontal-stroke"><hr></div>
-            <div class="comment-name"> {{ feedbacks[feedbackIndex].name }} - {{ feedbacks[feedbackIndex].relation }}</div>
+            <div class="comment-name" [ngClass]="{'transitioning': transitioning}"> {{ feedbacks[feedbackIndex].name }} - {{ feedbacks[feedbackIndex].relation }}</div>
           </div>
       </div>
     </div>

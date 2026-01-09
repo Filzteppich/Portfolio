@@ -1,3 +1,5 @@
+@import './../../../mixin.scss';
+
 @mixin right-space(){
     display: flex;
     align-items: flex-start;
@@ -67,6 +69,7 @@
     justify-content: end;
     >.skill-title-wrap>h2{
         font-size: 90px;
+        @include underLineEffect(left);
     }
 }
 
@@ -81,8 +84,11 @@
 
 .skill-description-wrapper{
     @include right-space();
+    @include transition(0.3s);
+    @include animateLeft(5px);
     >.skill-description-wrap{
         flex: 1;
+        padding-top: 32px;
     }
 }
     
@@ -93,6 +99,8 @@
 
 .skill-request-wrapper{
 @include right-space();
+@include transition(0.3s);
+@include animateLeft(5px);
 padding-top: 24px;
     >.skill-request-wrap{
         flex: 1;
@@ -117,6 +125,11 @@ padding-top: 24px;
     @include right-space();  
     justify-content: flex-end;  
     padding-top: 40px;
+    >.contact-btn-wrap{
+        @include transition(0.3s);
+        @include animateScale(1.1);
+        transform-origin: top right;
+    }
 }
 
 
@@ -127,4 +140,5 @@ padding-top: 24px;
     font-size: 23px;
     padding: 15px 30px;
     text-decoration: none;
+    @include transitionBtnPurple();
 }

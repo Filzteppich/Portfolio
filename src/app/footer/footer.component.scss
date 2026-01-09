@@ -1,3 +1,6 @@
+@import './../../mixin.scss';
+
+
 .footer-section{
     display: flex;
     width: 100%;
@@ -12,4 +15,9 @@
             cursor: pointer;
         }
     }
+}
+
+.social-icons>img{
+    @include transition(0.15s);
+    @include animateScale(1.4);
 }

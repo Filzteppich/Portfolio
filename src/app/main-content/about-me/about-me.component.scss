@@ -1,3 +1,7 @@
+@import './../../../mixin.scss';
+
+
+
 #aboutMeSection{
     scroll-margin-top: -90px;
 }
@@ -18,10 +22,6 @@
     max-width: 471px;
     padding-top: 100px;
     padding-left: 100px;
-    >h2{
-        font-size: 12px;
-        font-weight: 1500;
-    }
 }
 
 .main-text{
@@ -31,6 +31,11 @@
     >div>h2{
         font-size: 90px;
         font-weight: 700;
+        @include underLineEffect(left);
+    }
+    :nth-child(2){
+        @include transition(0.3s);
+        @include animateRight(5px);
     }
 }
 
@@ -82,3 +87,15 @@
     }
 }
 
+.sub-icon>img{
+    padding-top: 5px;
+    @include transition(0.3s);
+    @include animateScale(1.5);
+    transform-origin: top center
+}
+
+
+.sub-text{
+    @include transition(0.2s);
+    @include animateRight(5px)
+}

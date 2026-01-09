@@ -1,3 +1,5 @@
+@import './../../../mixin.scss';
+
 #portfolio-section{
     scroll-margin-top: 80px;
 }
@@ -96,6 +98,7 @@
         padding: 15px 30px;
         border-radius: 10px;
         font-size: 23px;
+        @include transitionBtnGreen();
     }
     >div>.github-btn{
     background-color: unset;
@@ -103,6 +106,7 @@
     border-radius: 10px;
     font-size: 23px;
     padding: 15px 30px;
+    @include transitionBtnGreen();
 }
 }
 
@@ -126,4 +130,8 @@
         font-weight: 400;
         padding-top: 15px;
     }
+}
+
+.project-text:hover > .project-name {
+  @include underLineEffect(left);
 }

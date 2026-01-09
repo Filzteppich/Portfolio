@@ -21,4 +21,34 @@
 }
 
 
+.button {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  transition: 1s ease;
+  z-index: 1;
+  &:before,
+  &:after {
+    background: var(--primary-color-purple);
+    transition: 1.0s ease;
+    content: '';
+    position: absolute;
+    z-index: -1;
+  }
+}
 
+
+.left {
+  &:before {
+    top: 0;
+    right: 100%;
+    bottom: 0;
+    left: 0;
+  }
+  &:hover {
+    &:before {
+      right: 0;
+    }
+  }
+}

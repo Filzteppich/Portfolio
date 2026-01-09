@@ -15,6 +15,7 @@ export class FeedbackComponent {
   animateRight : boolean = false;
   isTransitioning: boolean = false;
   noTransition: boolean = false;
+  transitioning: boolean = false;
 
 
     feedbacks = [
@@ -37,27 +38,33 @@ export class FeedbackComponent {
   ]
 
   nextIndex(){
-    if (this.isTransitioning) return;
-    this.isTransitioning = true;
-
-    this.animateLeft = true;
-
+    this.transitioning = true;
     setTimeout(() => {
       this.feedbackIndex = (this.feedbackIndex + 1) % this.feedbacks.length;
-      this.animateLeft = false;
-      this.noTransition = true;     
-      this.animateRight = true;     
+      this.transitioning = false;
+    }, 150);
 
-      setTimeout(() => {
-        this.noTransition = false;  
-        setTimeout(() => {
-          this.animateRight = false;  
-          setTimeout(() => {
-            this.isTransitioning = false;
-          }, 300);
-        }, 20);
-      }, 20);
-    }, 300);
+    // if (this.isTransitioning) return;
+    // this.isTransitioning = true;
+
+    // this.animateLeft = true;
+
+    // setTimeout(() => {
+    //   this.feedbackIndex = (this.feedbackIndex + 1) % this.feedbacks.length;
+    //   this.animateLeft = false;
+    //   this.noTransition = true;     
+    //   this.animateRight = true;     
+
+    //   setTimeout(() => {
+    //     this.noTransition = false;  
+    //     setTimeout(() => {
+    //       this.animateRight = false;  
+    //       setTimeout(() => {
+    //         this.isTransitioning = false;
+    //       }, 300);
+    //     }, 20);
+    //   }, 20);
+    // }, 300);
   }
 
   previousIndex(){
