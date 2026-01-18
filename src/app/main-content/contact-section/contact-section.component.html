@@ -1,54 +1,4 @@
-<div class="contact-section" *ngIf="language === 'en'" id="contact-section">
-    <div class="contact-title">
-        <hr>
-        <h2>Contact</h2>
-        <div class="right-spacer"></div>
-    </div>
-    <div class="split-section">
-        <div class="left-section">
-            <div class="left-title">
-                Got a Problem to solve?
-            </div>
-            <div class="left-text">
-                <div>
-                    Don't hesitate to contact me, i would like to help you with your problem.
-                </div>
-                <div>
-                    Need a Frontend developer? <b>Contact me</b>!
-                </div>
-            </div>
-        </div>
-        <div class="right-section" [formGroup]="form">
-            <div class="scroll-top-btn">
-                <a href="#atf-section"><img src="./../../../assets/icons/arrow-icons/scroll-top.svg" alt=""></a>  
-            </div>
-            <div class="input-fields">
-                <input type="text" formControlName="name" placeholder="Your name">
-                <span>Bitte geben sie ihren Namen ein</span>
-                <input class="mail-input" type="email" formControlName="email" placeholder="Your mail">
-                <span>Bitte geben sie ihre Email Adresse ein</span>
-                <textarea formControlName="message" placeholder="Your Message"></textarea>
-                <span>Ihre Nachricht ist leer</span>
-            </div>
-            <div class="checkbox-area">
-                <label class="checkbox">
-                    <input class="policy-checkbox" type="checkbox" formControlName="policy" />
-                    <span class="checkmark" aria-hidden="true"></span>
-                    <span class="checkbox-label">I've read the <a href="">privacy policy</a> and agree to the processing of my data as outlined</span>
-                    <span>Bitte akzeptieren sie die Datenschutzrichtlinien</span>
-                </label>
-            </div>
-            <div class="submit-button">
-                <button type="button" (click)="onSubmit()" [disabled]="sending || form.invalid">{{ sending ? 'Sending...' : 'Send a Message' }}</button>
-            </div>
-            <div class="status" *ngIf="errorMsg || sent">
-                <span class="error" *ngIf="errorMsg">{{ errorMsg }}</span>
-                <span class="success" *ngIf="!errorMsg && sent">Danke! Ihre Nachricht wurde vorbereitet/gesendet.</span>
-            </div>
-        </div>
 
-    </div>
-</div>
 
 <div class="contact-section" *ngIf="language === 'de'" id="contact-section">
     <div class="contact-title">
@@ -70,29 +20,89 @@
                 </div>
             </div>
         </div>
-        <div class="right-section" [formGroup]="form">
-            <div class="scroll-top-btn">
-                <a href="#atf-section"><img src="./../../../assets/icons/arrow-icons/scroll-top.svg" alt=""></a>  
+        <div class="right-section" >
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
+                <div class="scroll-top-btn">
+                    <a href="#atf-section"><img src="./../../../assets/icons/arrow-icons/scroll-top.svg" alt=""></a>  
+                </div>
+                <div class="input-fields">
+                    <input class="name-input" [class.invalid]="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" type="text" formControlName="name" placeholder="Ihr Name">
+                    <div *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched"><span>Bitte geben sie ihren Namen ein</span></div>
+                    <input class="mail-input" [class.invalid]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" type="email" formControlName="email" placeholder="Ihre Email">
+                    <div>
+                        <span *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">Bitte geben sie ihre Email Adresse ein</span>
+                    </div>
+                    <textarea class="textarea" [class.invalid]="contactForm.get('message')?.invalid && contactForm.get('message')?.touched" formControlName="message" placeholder="Ihre Nachricht"></textarea>
+                    <span *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">Ihre Nachricht ist leer</span>
+                </div>
+                <div class="checkbox-area">
+                    <label class="checkbox">
+                        <input class="policy-checkbox" type="checkbox" formControlName="policy" />
+                        <span class="checkmark" aria-hidden="true"></span>
+                        <span class="checkbox-label">Ich habe die <a href="">Datenschutzbestimmungen</a> gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu</span>
+                        <span *ngIf="unvalidField">Bitte akzeptieren sie die Datenschutzrichtlinien</span>
+                    </label>
+                    
+                </div>
+                <div class="submit-button">
+                    <button [class.enabled]="contactForm.valid" [class.disabled]="contactForm.invalid" [disabled]="contactForm.invalid" type="submit" >Schicken sie eine Nachricht</button>
+                </div>
+                
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="contact-section" *ngIf="language === 'en'" id="contact-section">
+    <div class="contact-title">
+        <hr>
+        <h2>Contact</h2>
+        <div class="right-spacer"></div>
+    </div>
+    <div class="split-section">
+        <div class="left-section">
+            <div class="left-title">
+                Got a Problem to solve?
             </div>
-            <div class="input-fields">
-                <input type="text" formControlName="name" placeholder="Ihr Name">
-                <input class="mail-input" type="email" formControlName="email" placeholder="Ihre Email">
-                <textarea formControlName="message" placeholder="Ihre Nachricht"></textarea>
+            <div class="left-text">
+                <div>
+                    Don't hesitate to contact me, i would like to help you with your problem.
+                </div>
+                <div>
+                    Need a Frontend developer? <b>Contact me</b>!
+                </div>
             </div>
-            <div class="checkbox-area">
-                <label class="checkbox">
-                    <input class="policy-checkbox" type="checkbox" formControlName="policy" />
-                    <span class="checkmark" aria-hidden="true"></span>
-                    <span class="checkbox-label">Ich habe die <a href="">Datenschutzbestimmungen</a> gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu</span>
-                </label>
-            </div>
-            <div class="submit-button">
-                <button type="button" (click)="onSubmit()" [disabled]="sending || form.invalid">{{ sending ? 'sendet...' : 'Schicken sie eine Nachricht' }}</button>
-            </div>
-            <div class="status" *ngIf="errorMsg || sent">
-                <span class="error" *ngIf="errorMsg">{{ errorMsg }}</span>
-                <span class="success" *ngIf="!errorMsg && sent">Danke! Ihre Nachricht wurde vorbereitet/gesendet.</span>
-            </div>
+        </div>
+        <div class="right-section">
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
+                <div class="scroll-top-btn">
+                    <a href="#atf-section"><img src="./../../../assets/icons/arrow-icons/scroll-top.svg" alt=""></a>  
+                </div>
+                <div class="input-fields">
+                    <input type="text" formControlName="name" placeholder="Your name">
+                    
+                    <input class="mail-input" type="email" formControlName="email" placeholder="Your mail">
+                    
+                    <textarea formControlName="message" placeholder="Your Message"></textarea>
+                    
+                </div>
+                <div class="checkbox-area">
+                    <label class="checkbox">
+                        <input class="policy-checkbox" type="checkbox" formControlName="policy" />
+                        <span class="checkmark" aria-hidden="true"></span>
+                        <span class="checkbox-label">I've read the <a href="">privacy policy</a> and agree to the processing of my data as outlined</span>
+                        
+                    </label>
+                </div>
+                <div class="submit-button">
+                    <button type="submit">sende eine nachricht</button>
+                </div>
+                
+            </form>
         </div>
 
     </div>
